@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAPETRUS - Faculdade de Ensino a Distância</title>
+    <meta name="description" content="FAPETRUS - Educação de qualidade 100% online. Graduação, pós-graduação e cursos livres com flexibilidade total.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .nav-link { transition: color 0.3s ease; }
+        .nav-link:hover { color: #667eea; }
+        .testimonial-card { min-height: 200px; }
+        .course-card { transition: all 0.3s ease; }
+        .course-card:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">F</span>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800">FAPETRUS</h1>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-600">Início</a>
+                    <a href="#cursos" class="nav-link text-gray-700 hover:text-blue-600">Cursos</a>
+                    <a href="#sobre" class="nav-link text-gray-700 hover:text-blue-600">Sobre</a>
+                    <a href="#processo" class="nav-link text-gray-700 hover:text-blue-600">Processo Seletivo</a>
+                    <a href="#blog" class="nav-link text-gray-700 hover:text-blue-600">Blog</a>
+                    <a href="#contato" class="nav-link text-gray-700 hover:text-blue-600">Contato</a>
+                    <a href="#login" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Área do Aluno</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl text-gray-700"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600">Início</a>
+                    <a href="#cursos" class="text-gray-700 hover:text-blue-600">Cursos</a>
+                    <a href="#sobre" class="text-gray-700 hover:text-blue-600">Sobre</a>
+                    <a href="#processo" class="text-gray-700 hover:text-blue-600">Processo Seletivo</a>
+                    <a href="#blog" class="text-gray-700 hover:text-blue-600">Blog</a>
+                    <a href="#contato" class="text-gray-700 hover:text-blue-600">Contato</a>
+                    <a href="#login" class="bg-blue-600 text-white px-4 py-2 rounded-lg inline-block text-center">Área do Aluno</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6">Transforme seu Futuro com Educação de Qualidade</h2>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">100% online, 100% reconhecido pelo MEC. Flexibilidade total para você estudar quando e onde quiser.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('cursos')" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition">
+                    <i class="fas fa-graduation-cap mr-2"></i>Ver Cursos
+                </button>
+                <button onclick="scrollToSection('processo')" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition">
+                    <i class="fas fa-user-plus mr-2"></i>Inscreva-se Agora
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+                <div class="text-center">
+                    <div class="text-4xl font-bold">15+</div>
+                    <div class="text-lg opacity-80">Cursos Disponíveis</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold">5000+</div>
+                    <div class="text-lg opacity-80">Alunos Formados</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold">98%</div>
+                    <div class="text-lg opacity-80">Satisfação</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold">24/7</div>
+                    <div class="text-lg opacity-80">Suporte Online</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos em Destaque -->
+    <section id="cursos" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Cursos em Destaque</h3>
+                <p class="text-xl text-gray-600">Escolha entre nossa ampla gama de cursos reconhecidos pelo MEC</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Curso 1 -->
+                <div class="course-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Sistemas de Informação</h4>
+                        <p class="text-gray-600 mb-4">Graduação completa em tecnologia com foco em desenvolvimento e gestão de sistemas.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-blue-600">R$ 299/mês</span>
+                            <span class="text-sm text-gray-500">4 anos</span>
+                        </div>
+                        <button onclick="showCourseDetails('Sistemas de Informação')" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Curso 2 -->
+                <div class="course-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-green-600 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Administração</h4>
+                        <p class="text-gray-600 mb-4">Forme-se em uma das áreas mais versáteis do mercado de trabalho.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-green-600">R$ 249/mês</span>
+                            <span class="text-sm text-gray-500">4 anos</span>
+                        </div>
+                        <button onclick="showCourseDetails('Administração')" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Curso 3 -->
+                <div class="course-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-user-graduate text-6xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Pedagogia</h4>
+                        <p class="text-gray-600 mb-4">Licenciatura para formar educadores preparados para os desafios atuais.</p>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-2xl font-bold text-purple-600">R$ 199/mês</span>
+                            <span class="text-sm text-gray-500">4 anos</span>
+                        </div>
+                        <button onclick="showCourseDetails('Pedagogia')" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition">
+                            Ver Detalhes
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button onclick="showAllCourses()" class="bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-700 transition">
+                    Ver Todos os Cursos <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">O que Nossos Alunos Dizem</h3>
+                <p class="text-xl text-gray-600">Histórias reais de transformação através da educação</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="testimonial-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            M
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="font-bold text-gray-800">Maria Silva</h5>
+                            <p class="text-gray-600">Administração - 2023</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"A FAPETRUS mudou minha vida! Consegui conciliar trabalho e estudos perfeitamente. Hoje sou gerente na empresa onde trabalho."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Depoimento 2 -->
+                <div class="testimonial-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            J
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="font-bold text-gray-800">João Santos</h5>
+                            <p class="text-gray-600">Sistemas de Informação - 2023</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Plataforma incrível, professores qualificados e suporte sempre disponível. Recomendo a todos que querem crescer profissionalmente."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Depoimento 3 -->
+                <div class="testimonial-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+                            A
+                        </div>
+                        <div class="ml-4">
+                            <h5 class="font-bold text-gray-800">Ana Costa</h5>
+                            <p class="text-gray-600">Pedagogia - 2022</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Flexibilidade sem abrir mão da qualidade. Consegui me formar sendo mãe e trabalhando. Gratidão eterna!"</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a FAPETRUS -->
+    <section id="sobre" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-4xl font-bold text-gray-800 mb-6">Sobre a FAPETRUS</h3>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Há mais de uma década, a FAPETRUS tem sido pioneira na educação a distância de qualidade no Brasil. 
+                        Nossa missão é democratizar o acesso ao ensino superior, oferecendo cursos reconhecidos pelo MEC 
+                        com a flexibilidade que você precisa.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 text-xl mr-3"></i>
+                            <span class="text-gray-700">Reconhecimento MEC</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 text-xl mr-3"></i>
+                            <span class="text-gray-700">Plataforma moderna e intuitiva</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 text-xl mr-3"></i>
+                            <span class="text-gray-700">Suporte 24/7</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-green-500 text-xl mr-3"></i>
+                            <span class="text-gray-700">Corpo docente qualificado</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+                        <i class="fas fa-university text-6xl mb-4"></i>
+                        <h4 class="text-2xl font-bold mb-4">Nossa Missão</h4>
+                        <p class="text-lg">Formar profissionais competentes e cidadãos conscientes através de uma educação inovadora e acessível.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-4xl font-bold mb-6">Pronto para Transformar seu Futuro?</h3>
+            <p class="text-xl mb-8">Faça parte da nossa comunidade de mais de 5.000 alunos transformados pela educação.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="downloadGuide()" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition">
+                    <i class="fas fa-download mr-2"></i>Baixar Guia Completo
+                </button>
+                <button onclick="showContact()" class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition">
+                    <i class="fas fa-comments mr-2"></i>Fale Conosco
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section id="blog" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-gray-800 mb-4">Últimas do Blog</h3>
+                <p class="text-xl text-gray-600">Dicas, carreira e tendências educacionais</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <article class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-lightbulb text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-blue-600 font-semibold">CARREIRA</span>
+                        <h4 class="text-xl font-bold text-gray-800 mt-2 mb-3">5 Dicas para Estudar Online com Eficiência</h4>
+                        <p class="text-gray-600 mb-4">Descubra estratégias comprovadas para maximizar seu aprendizado no ensino a distância...</p>
+                        <button class="text-blue-600 font-semibold hover:text-blue-700">Ler mais <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-500 flex items-center justify-center">
+                        <i class="fas fa-rocket text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-green-600 font-semibold">MERCADO</span>
+                        <h4 class="text-xl font-bold text-gray-800 mt-2 mb-3">Profissões em Alta para 2025</h4>
+                        <p class="text-gray-600 mb-4">Conheça as áreas que mais crescem e como se preparar para essas oportunidades...</p>
+                        <button class="text-green-600 font-semibold hover:text-green-700">Ler mais <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </article>
+
+                <article class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-purple-600 font-semibold">EDUCAÇÃO</span>
+                        <h4 class="text-xl font-bold text-gray-800 mt-2 mb-3">EAD vs Presencial: Qual Escolher?</h4>
+                        <p class="text-gray-600 mb-4">Análise completa das vantagens e desvantagens de cada modalidade de ensino...</p>
+                        <button class="text-purple-600 font-semibold hover:text-purple-700">Ler mais <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo e Descrição -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold">F</span>
+                        </div>
+                        <h4 class="text-xl font-bold">FAPETRUS</h4>
+                    </div>
+                    <p class="text-gray-300 mb-4">Transformando vidas através da educação a distância de qualidade.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white text-2xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-white text-2xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Links Rápidos</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#cursos" class="text-gray-300 hover:text-white">Cursos</a></li>
+                        <li><a href="#sobre" class="text-gray-300 hover:text-white">Sobre Nós</a></li>
+                        <li><a href="#processo" class="text-gray-300 hover:text-white">Processo Seletivo</a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-white">Blog</a></li>
+                        <li><a href="#contato" class="text-gray-300 hover:text-white">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Cursos -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Cursos Populares</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Administração</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Sistemas de Informação</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Pedagogia</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Psicologia</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Enfermagem</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contato -->
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Contato</h5>
+                    <div class="space-y-2 text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span>(11) 4000-0000</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope mr-2"></i>
+                            <span>contato@fapetrus.edu.br</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock mr-2"></i>
+                            <span>Seg-Sex: 8h às 22h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 FAPETRUS. Todos os direitos reservados. | CNPJ: 00.000.000/0001-00</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget" class="fixed bottom-6 right-6 z-50">
+        <button onclick="toggleChat()" class="bg-blue-600 text-white w-16 h-16 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center">
+            <i class="fas fa-comments text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Modal para Detalhes do Curso -->
+    <div id="courseModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-2xl mx-4 max-h-screen overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="courseModalTitle" class="text-2xl font-bold text-gray-800"></h3>
+                <button onclick="closeCourseModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="courseModalContent">
+                <!-- Conteúdo será preenchido dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Smooth Scroll
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Course Details Modal
+        function showCourseDetails(courseName) {
+            const modal = document.getElementById('courseModal');
+            const title = document.getElementById('courseModalTitle');
+            const content = document.getElementById('courseModalContent');
+            
+            title.textContent = courseName;
+            
+            // Simular conteúdo do curso
+            const courseDetails = {
+                'Sistemas de Informação': {
+                    description: 'Curso completo focado em desenvolvimento de software, gestão de projetos e análise de sistemas.',
+                    duration: '4 anos',
+                    price: 'R$ 299/mês',
+                    subjects: ['Programação', 'Banco de Dados', 'Engenharia de Software', 'Redes', 'Gestão de Projetos'],
+                    career: 'Desenvolvedor, Analista de Sistemas, Gerente de TI, Consultor em TI'
+                },
+                'Administração': {
+                    description: 'Formação completa em gestão empresarial, finanças, marketing e recursos humanos.',
+                    duration: '4 anos',
+                    price: 'R$ 249/mês',
+                    subjects: ['Gestão Estratégica', 'Marketing', 'Finanças', 'Recursos Humanos', 'Empreendedorismo'],
+                    career: 'Gestor, Consultor, Empreendedor, Analista Administrativo'
+                },
+                'Pedagogia': {
+                    description: 'Licenciatura para formar educadores capacitados para os desafios da educação moderna.',
+                    duration: '4 anos',
+                    price: 'R$ 199/mês',
+                    subjects: ['Psicologia da Educação', 'Didática', 'Metodologias de Ensino', 'Gestão Escolar'],
+                    career: 'Professor, Coordenador Pedagógico, Diretor Escolar, Consultor Educacional'
+                }
+            };
+            
+            const course = courseDetails[courseName];
+            
+            content.innerHTML = `
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2">Sobre o Curso</h4>
+                        <p class="text-gray-600">${course.description}</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h5 class="font-semibold mb-1">Duração</h5>
+                            <p class="text-gray-600">${course.duration}</p>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-1">Mensalidade</h5>
+                            <p class="text-gray-600">${course.price}</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2">Principais Disciplinas</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            ${course.subjects.map(subject => `<li>${subject}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2">Oportunidades de Carreira</h4>
+                        <p class="text-gray-600">${course.career}</p>
+                    </div>
+                    
+                    <div class="flex space-x-4 pt-4">
+                        <button onclick="alert('Funcionalidade de inscrição seria implementada com backend')" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition flex-1">
+                            Inscrever-se Agora
+                        </button>
+                        <button onclick="alert('Download do material seria implementado')" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-50 transition">
+                            Baixar Material
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeCourseModal() {
+            const modal = document.getElementById('courseModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Outras funções simuladas
+        function showAllCourses() {
+            alert('Esta página mostraria todos os cursos disponíveis com filtros por categoria.');
+        }
+
+        function downloadGuide() {
+            alert('Download do guia completo seria iniciado aqui.');
+        }
+
+        function showContact() {
+            alert('Modal de contato ou redirecionamento para página de contato seria implementado.');
+        }
+
+        function toggleChat() {
+            alert('Chat online seria aberto aqui com integração de sistema de atendimento.');
+        }
+
+        // Fechar modal clicando fora
+        document.getElementById('courseModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCourseModal();
+            }
+        });
+
+        // Animações ao scroll
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const cardVisible = 150;
+                
+                if (cardTop < window.innerHeight - cardVisible) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
